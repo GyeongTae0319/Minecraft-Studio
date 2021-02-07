@@ -1,0 +1,9 @@
+@import "./variables";
+
+@mixin block-background($block: "dirt", $scale: 1) {
+    background: {
+        image: url("~@/assets/minecraft/textures/block/#{$block}.png");
+        size: $pixel-unit * 16 * 1;
+        blend-mode: overlay;
+    }
+}
