@@ -1,0 +1,20 @@
+{
+    "mcstudio.language": "English",
+    "mcstudio.version": "dev.alpha",
+    "mcstudio.404": "404 Not Found :(",
+
+    "mcstudio.api.status.title": "Minecraft API Status",
+    "mcstudio.api.minecraft.net": "Home Page",
+    "mcstudio.api.session.minecraft.net": "Session",
+    "mcstudio.api.account.mojang.com": "Mojang Account",
+    "mcstudio.api.authserver.mojang.com": "Mojang Auth Server",
+    "mcstudio.api.sessionserver.mojang.com": "Mojang Session",
+    "mcstudio.api.api.mojang.com": "Mojang API",
+    "mcstudio.api.textures.minecraft.net": "Skin",
+    "mcstudio.api.mojang.com": "Mojang Home Page",
+
+    "mcstudio.aside.group.blocks": "Blocks",
+    "mcstudio.aside.item.banner": "Banners",
+    "mcstudio.page.group.blocks": "Blocks",
+    "mcstudio.page.banner": "Banners"
+}
