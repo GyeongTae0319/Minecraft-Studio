@@ -1,30 +1,58 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <component :is="`layout-${getLayout}`">
+        <router-view/>
+    </component>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+// Components
+import layoutDefault from "@/components/layout/Default.vue";
+import layoutBlank from "@/components/layout/Blank.vue";
+
+export default defineComponent({
+    name: "AppLayout",
+    components: {
+        layoutDefault,
+        layoutBlank
+    },
+    computed: {
+        getLayout(): string {
+            return this.$route.meta["layout"] || "default";
+        }
+    }
+});
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+
+    image-rendering: pixelated;
+
+    @media (prefers-reduced-motion) {
+        transition: none !important;
+    }
 }
 
-#nav {
-  padding: 30px;
+html {
+    @include block-background("gray_concrete");
+    background-color: rgba(#000, 0.25);
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+    color: #fff;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

@@ -1,14 +1,15 @@
 <template>
-    <div class="page-home">INDEX</div>
+    <div class="page-blocks-banner">BANNER</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    name: "PageHome"
+    name: "PageBlocksBanner"
 });
 </script>
 
 <style lang="scss" scoped>
+
 </style>

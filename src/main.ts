@@ -1,6 +1,18 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import { createApp } from "vue";
+import App from "@/App.vue";
+// Plugins
+import router from "@/router";
+import store from "@/store";
+import i18n from "@/i18n";
+import a11y from "@/a11y";
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+    .use(store)
+    .use(router)
+    .use(i18n)
+    .use(a11y);
+
+import AppButton from "@/components/AppButton.vue";
+app.component("app-button", AppButton);
+
+app.mount("#app");
