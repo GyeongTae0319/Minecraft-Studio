@@ -1,11 +1,11 @@
 <template>
-    <router-link :to="to" class="item-button">
+    <app-button :to="to" class="item-button">
         <img
             :src="require(`@/assets/images/icons/${item}.png`)"
             :alt="`${$i18n.t(`mcstudio.page.${item}`)} 아이콘`"
         >
         <span class="name">{{ $i18n.t(`mcstudio.page.${item}`) }}</span>
-    </router-link>
+    </app-button>
 </template>
 
 <script lang="ts">
@@ -35,12 +35,9 @@ export default defineComponent({
 
     white-space: nowrap;
 
-    &:hover {
+    &:hover,
+    &.keyboard-mode:focus {
         background-color: rgba(#fff, 0.05);
-    }
-    &:focus,
-    &.router-link-active {
-        background-color: rgba(#fff, 0.1);
     }
 
     img {

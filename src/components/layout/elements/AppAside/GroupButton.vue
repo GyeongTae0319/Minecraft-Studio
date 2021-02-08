@@ -22,15 +22,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@mixin hover {
-    background-color: rgba(#fff, 0.1);
-
-    .tag {
-        opacity: 1;
-        transform: translate(4px, -50%);
-    }
-}
-
 .group-button {
     display: flex;
     justify-content: center;
@@ -42,24 +33,13 @@ export default defineComponent({
 
     transition: background-color 0.05s;
 
-    &:hover {
-        @include hover;
-    }
+    &:hover,
     &.keyboard-mode:focus {
-        @include hover;
+        background-color: rgba(#fff, 0.1);
 
-        &::after {
-            content: "";
-
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            border: 4px solid $color-focus;
-            border-radius: inherit;
+        .tag {
+            opacity: 1;
+            transform: translate(4px, -50%);
         }
     }
 
@@ -67,6 +47,7 @@ export default defineComponent({
         opacity: 0;
 
         position: absolute;
+        z-index: 1;
         top: 50%;
         left: 100%;
 

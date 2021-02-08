@@ -2,18 +2,21 @@
     <aside :class="getClassList">
         <div class="group-aside">
             <div class="list">
+                <!-- <group-button></group-button> -->
                 <group-button
                     v-for="(group, index) in GroupList"
                     :key="`${index}_${group}`"
                     :group="group"
+                    :class="{ 'selected': selected === group }"
                     @click="setSelected(group)"
                 />
             </div>
         </div>
-        <div :class="getItemClassList">
+        <div :class="getItemAsideClassList">
             <div class="list">
                 <item-button
                     v-for="(item, index) in GroupItemList[selected]"
+                    :tabindex="showItemList ? 0 : -1"
                     :key="`${index}_${item}`"
                     :item="item"
                     :to="{ name: `${selected}-${item}` }"
@@ -25,7 +28,7 @@
 
 <script lang="ts">
 import { ClassList } from "@/vue-global";
-import { computed, defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 // Components
 import GroupButton from "./GroupButton.vue";
 import ItemButton from "./ItemButton.vue";
@@ -42,37 +45,40 @@ export default defineComponent({
         ItemButton
     },
     setup() {
-        // * State * //
-        const secondary = ref(false);
-        const selected = ref("none");
-        const showItemList = ref(false);
-        const setSelected = (select: string) => {
-            if (showItemList.value && selected.value === select) {
-                showItemList.value = false;
-            } else {
-                selected.value = select;
-                showItemList.value = true;
-            }
-        };
-
-        // * Class list * //
-        const getClassList = computed(() => { return ["app-aside", {
-            "secondary": secondary.value,
-            "show-item-list": showItemList.value
-        }] as ClassList });
-        const getItemClassList = computed(() => { return ["item-aside", {
-            "show": showItemList.value
-        }] as ClassList });
-
         return {
-            secondary,
-            getClassList,
-            selected,
-            setSelected,
-            getItemClassList,
             GroupList,
             GroupItemList
         };
+    },
+    data() {
+        return {
+            secondary: false,
+            selected: "none",
+            showItemList: false
+        };
+    },
+    computed: {
+        getClassList(): ClassList {
+            return ["app-aside", {
+                "secondary": this.showItemList,
+                "show-item-list": this.showItemList
+            }];
+        },
+        getItemAsideClassList(): ClassList {
+            return ["item-aside", {
+                "show": this.showItemList
+            }];
+        }
+    },
+    methods: {
+        setSelected(select: string) {
+            if (this.showItemList && this.selected === select) {
+                this.showItemList = false;
+            } else {
+                this.selected = select;
+                this.showItemList = true;
+            }
+        }
     }
 });
 </script>
