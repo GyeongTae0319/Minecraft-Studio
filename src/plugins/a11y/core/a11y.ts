@@ -9,7 +9,7 @@ export default class A11y {
                 this.keyboardMode.value = true;
             }
         });
-        window.addEventListener("mousemove", () => {
+        window.addEventListener("mousedown", () => {
             this.keyboardMode.value = false;
         });
     }
