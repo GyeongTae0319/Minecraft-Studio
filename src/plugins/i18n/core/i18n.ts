@@ -1,17 +1,20 @@
 import { Dictionary } from "@/vue-global";
 import { App, ref } from "vue";
+import { RouteLocation, RouteRecordNormalized } from "vue-router";
 
 type LanguageCollection = { [lang: string]: Dictionary<string> };
 
 export default class I18n {
     private locale = ref("en-us");
     private collection: LanguageCollection;
+    private urlParamName: string | null = null;
 
     private languageList: string[];
 
-    constructor(collection: LanguageCollection) {
+    constructor(collection: LanguageCollection, urlParamName: string | null = null) {
         this.collection = collection;
         this.languageList = Object.keys(this.collection);
+        this.urlParamName = urlParamName;
     }
 
     setLocale(locale: string): Boolean {
@@ -87,6 +90,15 @@ export default class I18n {
         );
         console.groupEnd();
         return key;
+    }
+    path(to: string | any): string | any {
+        if (typeof to === "string") {
+            return `/${this.getLocale()}/${to.replace(/^\//, "")}`;
+        } else if (this.urlParamName) {
+            if (to.params) to.params[this.urlParamName] = this.getLocale();
+            else to.params = { [this.urlParamName]: this.getLocale() };
+        }
+        return to;
     }
 
     install(vue: App) {

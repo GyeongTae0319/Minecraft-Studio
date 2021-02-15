@@ -6,7 +6,7 @@ import KO_KR from "./lang/ko";
 const i18n = new I18n({
     "en-us": EN_US,
     "ko": KO_KR
-});
+}, "lang");
 
 // i18n.setLocale(window.navigator.language);
 

@@ -9,16 +9,18 @@ export declare type ClassList = String | Array<string | Dictionary<Boolean>> | D
 export declare interface I18n {
     private locale: Ref<string>;
     private collection: LanguageCollection;
+    private urlParamName: string | null;
 
     private languageList: string[];
 
-    constructor(collection: LanguageCollection): void;
+    constructor(collection: LanguageCollection, urlParamName: string | null): void;
 
     setLocale(locale: string): boolean;
     getLocale(): string;
     getLanguageList(): string[];
 
     t(key: string): string;
+    path(to: string | any): string | any;
 
     install(vue: App): void;
 }
