@@ -16,11 +16,19 @@ const routes: Array<RouteRecordRaw> = [
             "@/views/Home.vue"
         )
     },
-    // * Block Pages * //
+    // * Blocks Pages * //
+    {
+        path: "/:lang/blocks",
+        name: "blocks",
+        component: () => import(
+            /* webpackChunkName: "blocks" */
+            "@/views/Blocks.vue"
+        )
+    },
     { // Banner
-        path: "/:lang/block/banner",
+        path: "/:lang/blocks/banner",
         name: "blocks-banner",
-        component: () => import (
+        component: () => import(
             /* webpackChunkName: "blocks-banner" */
             "@/views/Blocks/Banner.vue"
         )

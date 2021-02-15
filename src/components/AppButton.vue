@@ -5,6 +5,7 @@
         :class="getClassList"
     >
         <slot/>
+        <span class="overlay" />
     </component>
 </template>
 
@@ -63,10 +64,14 @@ export default defineComponent({
     position: relative;
     cursor: pointer;
 
-    &.keyboard-mode:focus::after {
-        content: "";
+    &.keyboard-mode:focus .overlay {
+        display: block;
+    }
 
+    .overlay {
+        display: none;
         position: absolute;
+        z-index: 4;
         top: 0;
         left: 0;
 
@@ -75,6 +80,8 @@ export default defineComponent({
 
         border: 4px solid $color-focus;
         border-radius: inherit;
+
+        pointer-events: none;
     }
 }
 </style>

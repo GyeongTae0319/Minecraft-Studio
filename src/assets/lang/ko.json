@@ -13,8 +13,6 @@
     "mcstudio.api.textures.minecraft.net": "스킨",
     "mcstudio.api.mojang.com": "모장 홈페이지",
 
-    "mcstudio.aside.group.blocks": "블록",
-    "mcstudio.aside.item.banner": "현수막 제작",
-    "mcstudio.page.group.blocks": "블록",
-    "mcstudio.page.banner": "현수막 제작"
+    "mcstudio.page.blocks": "블록",
+    "mcstudio.page.blocks.banner": "현수막 제작"
 }

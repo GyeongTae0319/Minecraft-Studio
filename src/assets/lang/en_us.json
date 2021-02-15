@@ -13,8 +13,6 @@
     "mcstudio.api.textures.minecraft.net": "Skin",
     "mcstudio.api.mojang.com": "Mojang Home Page",
 
-    "mcstudio.aside.group.blocks": "Blocks",
-    "mcstudio.aside.item.banner": "Banners",
-    "mcstudio.page.group.blocks": "Blocks",
-    "mcstudio.page.banner": "Banners"
+    "mcstudio.page.blocks": "Blocks",
+    "mcstudio.page.blocks.banner": "Banner"
 }

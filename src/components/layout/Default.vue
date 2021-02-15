@@ -1,6 +1,6 @@
 <template>
     <div id="appLayout">
-        <app-aside/>
+        <app-aside id="appAside" />
         <main id="appMain">
             <!-- <header id="appHeader"></header> -->
             <slot/>
@@ -23,10 +23,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #appLayout {
-    display: flex;
+    padding-left: $aside-width;
 
+    #appAside {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
     #appMain {
-        flex: 1 1 0;
+        width: 100%;
     }
 }
 </style>
