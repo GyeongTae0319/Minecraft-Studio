@@ -6,6 +6,6 @@ import KO from "./lang/ko";
 const i18n = new I18n({
     "en-us": EN_US,
     "ko": KO
-});
+}, "lang");
 
 export default i18n;

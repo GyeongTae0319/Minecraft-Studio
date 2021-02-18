@@ -31,7 +31,7 @@ export default defineComponent({
             switch (this.getTagName) {
                 case "router-link":
                     Object.assign(result, {
-                        "to": this.to
+                        "to": this.$i18n.path(this.to)
                     });
                     break;
                 case "a":
