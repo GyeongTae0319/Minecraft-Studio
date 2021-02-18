@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import i18n from "@/plugins/i18n";
+// Router view template
+import Blank from "@/views/Blank.vue";
 
 // Route structure
 const routes: Array<RouteRecordRaw> = [
@@ -16,22 +18,27 @@ const routes: Array<RouteRecordRaw> = [
             "@/views/Home.vue"
         )
     },
-    // * Blocks Pages * //
-    {
+    { // Blocks Pages
         path: "/:lang/blocks",
-        name: "blocks",
-        component: () => import(
-            /* webpackChunkName: "blocks" */
-            "@/views/Blocks.vue"
-        )
-    },
-    { // Banner
-        path: "/:lang/blocks/banner",
-        name: "blocks-banner",
-        component: () => import(
-            /* webpackChunkName: "blocks-banner" */
-            "@/views/Blocks/Banner.vue"
-        )
+        component: Blank,
+        children: [
+            { // Home
+                path: "",
+                name: "blocks",
+                component: () => import(
+                    /* webpackChunkName: "blocks" */
+                    "@/views/Blocks/Home.vue"
+                )
+            },
+            { // Banner
+                path: "banner",
+                name: "blocks-banner",
+                component: () => import(
+                    /* webpackChunkName: "blocks-banner" */
+                    "@/views/Blocks/Banner.vue"
+                )
+            }
+        ]
     },
     { // 404 Not Found
         path: "/:lang/:catchAll(.*)",
