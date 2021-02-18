@@ -1,6 +1,5 @@
 import { Dictionary } from "@/vue-global";
 import { App, ref } from "vue";
-import { RouteLocation, RouteRecordNormalized } from "vue-router";
 
 type LanguageCollection = { [lang: string]: Dictionary<string> };
 

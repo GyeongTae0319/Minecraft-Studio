@@ -1,4 +1,4 @@
-# test
+# Minecraft Studio
 
 ## Project setup
 ```

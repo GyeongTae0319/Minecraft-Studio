@@ -1,10 +1,10 @@
 import { createApp } from "vue";
-import App from "@/App.vue";
+import App from "@/views/App.vue";
 // Plugins
-import router from "@/router";
-import store from "@/store";
-import i18n from "@/i18n";
-import a11y from "@/a11y";
+import router from "@/plugins/router";
+import store from "@/plugins/store";
+import i18n from "@/plugins/i18n";
+import a11y from "@/plugins/a11y";
 
 const app = createApp(App)
     .use(store)

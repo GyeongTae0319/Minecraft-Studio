@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import i18n from "@/i18n";
+import i18n from "@/plugins/i18n";
 
 // Route structure
 const routes: Array<RouteRecordRaw> = [

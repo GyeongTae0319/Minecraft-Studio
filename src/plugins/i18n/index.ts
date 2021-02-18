@@ -1,3 +1,11 @@
 import I18n from "./core/i18n";
+// Languages
+import EN_US from "./lang/en-us";
+import KO from "./lang/ko";
 
-export default I18n;
+const i18n = new I18n({
+    "en-us": EN_US,
+    "ko": KO
+});
+
+export default i18n;
