@@ -59,8 +59,8 @@ const router = createRouter({
 
 // Language guard
 router.beforeEach((to, from, next) => {
-    const lang = to.params["lang"] as string;
-    if (i18n.setLocale(lang)) {
+    const lang = to.params["lang"] as string | undefined;
+    if (lang && i18n.setLocale(lang)) {
         next();
     } else {
         i18n.setLocale(window.navigator.language);
