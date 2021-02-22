@@ -53,6 +53,7 @@ html {
     background-color: rgba(#000, 0.25);
 
     color: #fff;
+    font-size: $font-size-s;
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

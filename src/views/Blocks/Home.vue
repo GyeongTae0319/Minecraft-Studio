@@ -55,7 +55,7 @@ $widget-icon-size: 64px;
 
         h1 {
             margin-right: 8px;
-            font-size: 32px;
+            font-size: $font-size-l;
             font-weight: bold;
         }
         .icon {
@@ -98,7 +98,7 @@ $widget-icon-size: 64px;
         }
     }
     .name {
-        font-size: 12px;
+        font-size: $font-size-xs;
     }
 }
 </style>
