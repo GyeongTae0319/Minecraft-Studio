@@ -39,7 +39,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$widget-icon-size: 64px;
+$widget-icon-size: 96px;
 
 .page-blocks {
     padding: 32px 0;
@@ -51,15 +51,15 @@ $widget-icon-size: 64px;
         margin: {
             bottom: 24px;
         };
-        padding-left: 24px;
+        padding-left: 32px;
 
         h1 {
             margin-right: 8px;
-            font-size: $font-size-l;
+            font-size: $font-size-xl;
             font-weight: bold;
         }
         .icon {
-            height: 48px;
+            height: 64px;
         }
     }
 }
@@ -68,7 +68,7 @@ $widget-icon-size: 64px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, $widget-icon-size + 16px);
-    gap: 8px;
+    gap: 16px;
 
     margin: 0 32px;
 }
@@ -84,10 +84,10 @@ $widget-icon-size: 64px;
     .icon {
         display: flex;
 
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         padding: 8px;
 
-        border-radius: 8px;
+        border-radius: 16px;
         background-color: rgba(#fff, 0.05);
 
         transition: background-color 0.1s;
@@ -96,9 +96,6 @@ $widget-icon-size: 64px;
             width: $widget-icon-size;
             height: $widget-icon-size;
         }
-    }
-    .name {
-        font-size: $font-size-xs;
     }
 }
 </style>
