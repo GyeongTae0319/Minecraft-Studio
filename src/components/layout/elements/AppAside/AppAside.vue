@@ -76,6 +76,9 @@ $item-size: 48px;
             transform: translate(4px, -50%);
         }
     }
+    &.keyboard-mode:focus::after {
+        border-color: $color-focus;
+    }
     &:active {
         background-color: rgba(#fff, 0.05);
     }
@@ -107,6 +110,21 @@ $item-size: 48px;
 
         pointer-events: none;
     }
+    &::after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        border: $pixel-unit solid transparent;
+        border-radius: inherit;
+
+        pointer-events: none;
+    }
     .tag {
         opacity: 0;
 
@@ -118,7 +136,7 @@ $item-size: 48px;
         padding: 2px 8px;
 
         border-radius: 4px;
-        background-color: rgba(#000, 0.5);
+        background-color: rgba(#000, 0.8);
 
         word-break: keep-all;
 

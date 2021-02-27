@@ -77,12 +77,19 @@ $widget-icon-size: 96px;
     flex-direction: column;
     align-items: center;
 
-    &:hover .icon {
+    border-radius: 16px;
+
+    &:hover .icon,
+    &.keyboard-mode:focus .icon {
         background-color: rgba(#fff, 0.1);
+    }
+    &.keyboard-mode:focus .icon::after {
+        border-color: $color-focus;
     }
 
     .icon {
         display: flex;
+        position: relative;
 
         margin-bottom: 8px;
         padding: 8px;
@@ -92,6 +99,21 @@ $widget-icon-size: 96px;
 
         transition: background-color 0.1s;
 
+        &::after {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border: $pixel-unit solid transparent;
+            border-radius: inherit;
+
+            pointer-events: none;
+        }
         img {
             width: $widget-icon-size;
             height: $widget-icon-size;
