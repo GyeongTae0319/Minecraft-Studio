@@ -10,7 +10,7 @@
                 :src="require(`@/assets/images/icons/${link}.png`)"
                 :alt="$i18n.t(`mcstudio.page.${link}`)"
             >
-            <span class="tag">{{ $i18n.t(`mcstudio.page.${link}`) }}</span>
+            <app-tooltip dir="right">{{ $i18n.t(`mcstudio.page.${link}`) }}</app-tooltip>
         </app-button>
     </aside>
 </template>
@@ -71,10 +71,6 @@ $item-size: 48px;
             width: 4px;
             height: 16px;
         }
-        .tag {
-            opacity: 1;
-            transform: translate(4px, -50%);
-        }
     }
     &.keyboard-mode:focus::after {
         border-color: $color-focus;
@@ -122,26 +118,6 @@ $item-size: 48px;
 
         border: $pixel-unit solid transparent;
         border-radius: inherit;
-
-        pointer-events: none;
-    }
-    .tag {
-        opacity: 0;
-
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 100%;
-
-        padding: 2px 8px;
-
-        border-radius: 4px;
-        background-color: rgba(#000, 0.8);
-
-        word-break: keep-all;
-
-        transform: translate(0, -50%);
-        transition: opacity 0.1s, transform 0.1s;
 
         pointer-events: none;
     }

@@ -13,6 +13,8 @@ const app = createApp(App)
     .use(a11y);
 
 import AppButton from "@/components/AppButton.vue";
+import AppTooltip from "@/components/AppTooltip.vue";
 app.component("app-button", AppButton);
+app.component("app-tooltip", AppTooltip);
 
 app.mount("#app");
