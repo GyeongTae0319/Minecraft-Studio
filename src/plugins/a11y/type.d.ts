@@ -1,3 +1,5 @@
+import { Ref } from "vue";
+
 export declare interface A11y {
     private keyboardMode: Ref<Boolean>;
 
