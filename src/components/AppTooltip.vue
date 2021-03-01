@@ -56,6 +56,7 @@ export default defineComponent({
     border-radius: 4px;
     background-color: rgba(#000, 0.8);
 
+    white-space: nowrap;
     word-break: keep-all;
 
     transition: opacity 0.1s, top 0.1s, bottom 0.1s, right 0.1s, left 0.1s;
