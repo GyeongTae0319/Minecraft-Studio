@@ -7,8 +7,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 // Components
-import layoutDefault from "@/components/layout/Default.vue";
-import layoutBlank from "@/components/layout/Blank.vue";
+import layoutDefault from "@/components/layout/LayoutDefault.vue";
+import layoutBlank from "@/components/layout/LayoutBlank.vue";
 
 export default defineComponent({
     name: "AppLayout",
