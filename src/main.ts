@@ -14,7 +14,9 @@ const app = createApp(App)
 
 import AppButton from "@/components/AppButton.vue";
 import AppTooltip from "@/components/AppTooltip.vue";
+import AppIcon from "@/components/AppIcon.vue";
 app.component("app-button", AppButton);
 app.component("app-tooltip", AppTooltip);
+app.component("app-icon", AppIcon);
 
 app.mount("#app");
